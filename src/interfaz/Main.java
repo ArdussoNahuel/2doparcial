@@ -17,9 +17,6 @@ public class Main {
 		
 		menu(encargado,menu,socios,ventas);
 		
-		for (Venta socio : ventas) {
-			System.out.println(socio);
-		}
 	}
 	
 	
@@ -59,7 +56,7 @@ public class Main {
 				menu(encargado,menu,socios,ventas);
 				break;
 			case "Finalizar día":
-				if (ventas.size()<5) {
+				if (ventas.size()>5) {
 					encargado.setVendiendo(false);
 				} else {
 					JOptionPane.showMessageDialog(null, "Debes realizar al menos 5 ventas, no seas vago man");
@@ -72,7 +69,15 @@ public class Main {
 				menu(encargado,menu,socios,ventas);
 				break;
 			case "Mostrar cafe más vendido":
-				encargado.agregarVenta(encargado.vender(menu), socios, ventas); 
+				JOptionPane.showMessageDialog(null, "El Café más vendido hoy fue "+encargado.masVendido(ventas, menu));
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Mostrar recaudación total":
+				JOptionPane.showMessageDialog(null, "El total recaudado hoy fue $"+encargado.total(ventas));
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Mostrar ventas con descuento":
+				JOptionPane.showMessageDialog(null, encargado.descuento(ventas));
 				menu(encargado,menu,socios,ventas);
 				break;
 			default:

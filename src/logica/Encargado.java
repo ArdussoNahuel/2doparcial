@@ -100,9 +100,41 @@ public class Encargado {
 		return aux;
 	}
 	
+	public String masVendido (LinkedList<Venta> ventas, LinkedList<Cafe> menu) {
+		int []masvendido= {0,0,0,0};
+		for (Venta venta : ventas) {
+				masvendido[venta.getCafe().getId()-1]+=venta.getCantidad();
+		}
+		int max=0;
+		for (int i=0;i<masvendido.length;i++) {
+			if (masvendido[i]>masvendido[max]) {
+				max=i;
+			}
+		}
+		return menu.get(max).getNombre()+" con "+masvendido[max];
+	}
 	
+	public double total (LinkedList<Venta> ventas) {
+		double total=0;
+		for (Venta venta : ventas) {
+			if (venta.getTarjetasocio()==0) {
+				total+=venta.getCantidad()*venta.getCafe().getPrecio();
+			} else {
+				total+=venta.getCantidad()*venta.getCafe().getPrecio()*0.85;
+			}
+		}
+		return total;
+	}
 	
-	
+	public String descuento (LinkedList<Venta> ventas) {
+		String aux ="";
+		for (Venta venta : ventas) {
+			if (venta.getTarjetasocio()!=0) {
+				aux+=venta.toString();
+			}
+		}
+		return aux;
+	}
 	
 }
 
