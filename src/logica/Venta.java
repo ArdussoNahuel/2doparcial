@@ -49,7 +49,7 @@ public class Venta {
 
 	@Override
 	public String toString() {
-		return "Venta [id=" + id + ", cafe=" + cafe + ", cantidad=" + cantidad + ", socio=" + tarjetasocio + "]";
+		return "Venta nro: " + id + "\nResumen: " +cantidad+" "+ cafe + "\nSocio: " + tarjetasocio+"\n";
 	}
 	
 }

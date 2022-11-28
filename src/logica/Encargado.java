@@ -92,6 +92,18 @@ public class Encargado {
 		
 	}
 	
+	public String mostrarVentas (LinkedList<Venta> ventas) {
+		String aux ="";
+		for (Venta venta : ventas) {
+			aux+=venta.toString();
+		}
+		return aux;
+	}
+	
+	
+	
+	
+	
 }
 
 

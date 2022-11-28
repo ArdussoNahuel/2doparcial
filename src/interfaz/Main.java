@@ -27,7 +27,7 @@ public class Main {
 		String []opciones = {"Agregar venta","Finalizar día","Disponible cuando finalice el día","Disponible cuando finalice el día","Disponible cuando finalice el día","Disponible cuando finalice el día"};
 		if (!encargado.isVendiendo()) {
 			opciones[0]="Salir del programa";
-			opciones[1]="Iniciar nuevo día";
+			opciones[1]="Eliminar venta";
 			opciones[2]="Mostrar todas las ventas";
 			opciones[3]="Mostrar cafe más vendido";
 			opciones[4]="Mostrar recaudación total";
@@ -51,7 +51,30 @@ public class Main {
 				encargado.agregarVenta(encargado.vender(menu), socios, ventas); 
 				menu(encargado,menu,socios,ventas);
 				break;
-
+			case "Eliminar venta":
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Disponible cuando finalice el día":
+				JOptionPane.showMessageDialog(null, "Se debe terminar el día para acceder a esta opción");
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Finalizar día":
+				if (ventas.size()<5) {
+					encargado.setVendiendo(false);
+				} else {
+					JOptionPane.showMessageDialog(null, "Debes realizar al menos 5 ventas, no seas vago man");
+				}
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Mostrar todas las ventas":
+				//dividor por no se 6 o 5 y crear un array con ese valor de indice max y mostrar de a paginas
+				JOptionPane.showMessageDialog(null, encargado.mostrarVentas(ventas));
+				menu(encargado,menu,socios,ventas);
+				break;
+			case "Mostrar cafe más vendido":
+				encargado.agregarVenta(encargado.vender(menu), socios, ventas); 
+				menu(encargado,menu,socios,ventas);
+				break;
 			default:
 				break;
 			}
