@@ -23,7 +23,6 @@ public class Socio {
 	}
 	@Override
 	public String toString() {
-		String aux;
 		if (this.getTarjeta()==0) {
 			return nombre;
 		} else {

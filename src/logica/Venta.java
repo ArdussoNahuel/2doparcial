@@ -49,11 +49,10 @@ public class Venta {
 
 	@Override
 	public String toString() {
-		double mult=1;
 		if (this.tarjetasocio!=0) {
-			mult=0.85;
+			return "Venta nro: " + id + " \nResumen: " +cantidad+ " "+ cafe.getNombre() + " - $" + cantidad*cafe.getPrecio()*0.85 + " \nSocio: " + tarjetasocio+"\n";
 		}
-		return "Venta nro: " + id + " \nResumen: " +cantidad+ " "+ cafe.getNombre() + " - $" + cantidad*cafe.getPrecio()*mult + " \nSocio: " + tarjetasocio+"\n";
+		return "Venta nro: " + id + " \nResumen: " +cantidad+ " "+ cafe.getNombre() + " - $" + cantidad*cafe.getPrecio() + " \nSocio: sin tarjeta\n";
 	}
 	
 }

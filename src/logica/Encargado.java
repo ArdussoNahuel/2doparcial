@@ -48,8 +48,8 @@ public class Encargado {
 		}
 		String opcion = (String) JOptionPane.showInputDialog(
 				null // para que se muestre centrado
-				,"Elija un café" // Mensaje de la ventana
-				,"agregar venta" // Titulo de la ventana
+				,"Elija un cafe" // Mensaje de la ventana
+				,"Agregar venta" // Titulo de la ventana
 				,JOptionPane.QUESTION_MESSAGE // Icono
 				,null //null para icono defecto de la ventana
 				,aux // el objeto
@@ -68,7 +68,7 @@ public class Encargado {
 		if (cafe!=null) {
 			int cantidad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese cantidad"));
 			while (cantidad <1) {
-				cantidad = Integer.parseInt(JOptionPane.showInputDialog("La cantidad debe ser 1 o más"));
+				cantidad = Integer.parseInt(JOptionPane.showInputDialog("La cantidad debe ser 1 o mas"));
 			}
 			String []aux= new String[socios.size()];
 			for (int i=0;i<socios.size();i++) {

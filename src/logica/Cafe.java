@@ -39,6 +39,6 @@ public class Cafe {
 
 	@Override
 	public String toString() {
-		return "Cafe [id=" + id + ", nombre=" + nombre + ", precio=" + precio + "]";
+		return nombre + " [Precio: $" + precio + "]";
 	}
 }
