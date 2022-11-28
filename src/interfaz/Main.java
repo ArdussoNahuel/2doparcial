@@ -49,6 +49,7 @@ public class Main {
 				menu(encargado,menu,socios,ventas);
 				break;
 			case "Eliminar venta":
+				encargado.eliminar(ventas);
 				menu(encargado,menu,socios,ventas);
 				break;
 			case "Disponible cuando finalice el día":

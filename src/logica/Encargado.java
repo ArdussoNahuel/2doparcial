@@ -85,7 +85,7 @@ public class Encargado {
 					);
 			for (Socio socio : socios) {
 				if (socio.toString().equals(opcion)) {
-					ventas.add(new Venta(ventas.size(),cafe,cantidad,socio.getTarjeta()));
+					ventas.add(new Venta(ventas.size()+1,cafe,cantidad,socio.getTarjeta()));
 				}
 			}
 		}
@@ -134,6 +134,32 @@ public class Encargado {
 			}
 		}
 		return aux;
+	}
+	
+	public void eliminar (LinkedList<Venta> ventas) {
+		int borrar=-1;
+		String []opciones = new String[ventas.size()+1];
+		for (int i=0;i<ventas.size();i++) {
+			opciones[i+1]=ventas.get(i).toString();
+		}
+		opciones[0]="Volver al menu";
+		String opcion = (String) JOptionPane.showInputDialog(
+				null // para que se muestre centrado
+				,"Elija una venta para eliminarla" // Mensaje de la ventana
+				,"Eliminar venta" // Titulo de la ventana
+				,JOptionPane.QUESTION_MESSAGE // Icono
+				,null //null para icono defecto de la ventana
+				,opciones // el objeto
+				,opciones[0] // posicion del que va aparecer seleccionado
+				);
+		for (Venta venta : ventas) {
+			if (venta.toString().equals(opcion)) {
+				borrar=venta.getId()-1;
+			}
+		}
+		if (borrar>=0) {
+			ventas.remove(borrar);
+		}
 	}
 	
 }

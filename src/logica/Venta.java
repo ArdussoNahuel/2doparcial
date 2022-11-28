@@ -53,7 +53,7 @@ public class Venta {
 		if (this.tarjetasocio!=0) {
 			mult=0.85;
 		}
-		return "Venta nro: " + id + "\nResumen: " +cantidad+ " "+ cafe.getNombre() + " - $" + cantidad*cafe.getPrecio()*mult + "\nSocio: " + tarjetasocio+"\n";
+		return "Venta nro: " + id + " \nResumen: " +cantidad+ " "+ cafe.getNombre() + " - $" + cantidad*cafe.getPrecio()*mult + " \nSocio: " + tarjetasocio+"\n";
 	}
 	
 }
